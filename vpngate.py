@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://jiakuan.hell007.ccwu.cc/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,8 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "mfa.gov.ua:443,serviceshub.samsclub.com:2053,academy.mastercard.com:2083,jobsdb.com:2053,hostinger.com:2087,pubs.acs.org:2053,"
-        "auto.dolby.dpdns.org:8443,digitalocean.com:2053,www.copilot.com:2083,www.visa.com:443,[2606:4700:91b8:ff87:1a16:e8a4:e4e9:9360]:443,[2606:4700:9a67:5881:946c:b6e2:6c8:4043]:443,[2606:4700:9a96:3984:5e6a:7053:9d84:63d]:443,[2606:4700:8399:dc4e:5a62:c7f3:8b6b:5cc2]:443,[2606:4700:91b7:7d6a:fba9:cf3d:4abd:70b8]:443,[2606:4700:9a60:3f33:af33:dd13:29a3:af1]:443",
+        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
+        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +522,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "1f5d79c6-4a84-4478-91b8-c422bb94104f")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "xc.hell008.ccwu.cc")
+EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
